@@ -11,10 +11,14 @@ async function f() {
     let secs = date.getSeconds();
     let formattedDate = `${hours}:${mins}:${secs}`;
 
-    console.log(`Current temperature: ${data.main.temp}`)
-    console.log(`Location: ${data.name}`)
-    console.log(`Sunrise: ${data.sys.sunrise}`)
-    console.log(`Sunrise: ${formattedDate}`)
+    document.getElementById('id01').innerHTML = data.main.temp;
+
+
+
+    // console.log(`Current temperature: ${data.main.temp}`)
+    // console.log(`Location: ${data.name}`)
+    // console.log(`Sunrise: ${data.sys.sunrise}`)
+    // console.log(`Sunrise: ${formattedDate}`)
 }
 
 f();
