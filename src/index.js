@@ -1,8 +1,17 @@
 const api_key = "808d67d7b2bd95c69791f456b64b9e0e";
 
 async function f() {
+    let lat, lon;
 
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=delhi&appid=${ api_key }&units=metric`)
+    navigator.geolocation.getCurrentPosition((position) => {
+        // lat = position.coords.latitude; 
+        lon = position.coords.longitude;
+        document.getElementById('lat').innerHTML = position.coords.latitude;
+        document.getElementById('lon').innerHTML = position.coords.longitude;
+    });
+    debugger;
+
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${ api_key }&units=metric`);
     const data = await response.json();
 
     let date = new Date(data.sys.sunrise * 1000)
@@ -38,6 +47,7 @@ async function f() {
     document.getElementById('like').innerHTML = data.main.feels_like;
     document.getElementById('sunrise').innerHTML = formattedDate;
     document.getElementById('sunset').innerHTML = sunsetDate;
+
 }
 
 f();
