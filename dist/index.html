@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Weather</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="index.bundle.js"></script>
+    <style>
+    	* {
+    		box-sizing: border-box;
+    		margin: 0;
+    		padding: 0;
+    	}
+    body {
+    	height: 100vh;
+    }
+
+    html, body {
+    	scroll-behavior: smooth;
+    	color: #02304b;
+    }
+
+    body * {
+    	transition: 0.3s;
+    }
+    </style>
+</head>
+
+<body>
+	<h1>City: <span id="name"></span></h1>
+	<p>Curren temperator is: <span id="temp"></span></p>
+	<p>Minimun temperator (<span id="min"></span>)</p>
+	<p>Maximum temperator (<span id="max"></span>)</p>
+	<p>It's feels like <span id="like"></span></p>
+	<p>Sunrise <span id="sunrise"></span></p>
+	<p>Sunset <span id="sunset"></span></p>
+	<p>Latitude: <span id="lat"></span></p>
+	<p>Longitude: <span id="lon"></span></p>
+</body>
+
+</html>
